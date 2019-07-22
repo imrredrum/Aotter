@@ -2,7 +2,7 @@
 <div class="video">
   <vue-plyr>
     <div class="plyr__video-embed">
-      <iframe :src="decodeURIComponent(src).replace('watch?v=', 'embed/')" allowfullscreen allowtransparency allow="autoplay">
+      <iframe :src="decodeURIComponent(src).replace(/watch\?v=/g, 'embed\/')" allowfullscreen allowtransparency allow="autoplay">
       </iframe>
     </div>
   </vue-plyr>

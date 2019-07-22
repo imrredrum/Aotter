@@ -16,7 +16,7 @@
   </div>
   <div class="list-container w-full sm:w-full md:w-full lg:w-1/3 xl:w-1/3">
     <div class="box-container mt-6 sm:mt-6 md:mt-6 lg:mt-0 xl:mt-0">
-      <nuxt-link :to="'/post/' + listContent[n]._seqId" class="box" v-for="n in 3">
+      <nuxt-link :to="'/post/' + listContent[n]._seqId" class="box" v-for="n in 3" :key="n">
         <div class="bgi">
           <div class="bgi-spacer"></div>
           <div class="bgi-inner" :style="'background-image: url(\'https://agirls.aottercdn.com' + listContent[n].coverImg + '\')'"></div>
@@ -32,7 +32,7 @@
   </div>
   <div class="list-container w-full sm:w-full md:w-full lg:w-1/3 xl:w-1/3">
     <div class="box-container mt-6 sm:mt-6 md:mt-6 lg:mt-0 xl:mt-0">
-      <nuxt-link :to="'/post/' + listContent[n+3]._seqId" class="box" v-for="n in 3">
+      <nuxt-link :to="'/post/' + listContent[n+3]._seqId" class="box" v-for="n in 3" :key="n">
         <div class="bgi">
           <div class="bgi-spacer"></div>
           <div class="bgi-inner" :style="'background-image: url(\'https://agirls.aottercdn.com' + listContent[n+3].coverImg + '\')'"></div>

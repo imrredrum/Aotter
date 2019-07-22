@@ -26,7 +26,7 @@ export default {
   async asyncData({
     $axios
   }) {
-    let listData = await $axios.$get('/api/post/list?show=7')
+    let listData = await $axios.$get('/api/post/list?show=7&type=article')
     let videoData = await $axios.$get('/api/post/list?show=1&type=video')
     return {
       listContent: listData.success.list,
