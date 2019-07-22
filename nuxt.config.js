@@ -34,13 +34,15 @@ export default {
    ** Global CSS
    */
   css: [
-    '~/assets/css/tailwind.css'
+    '~/assets/css/tailwind.css',
+    'vue-plyr/dist/vue-plyr.css'
   ],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '~/plugins/axios'
+    '~/plugins/axios',
+    '~/plugins/vue-plyr'
   ],
   /*
    ** Nuxt.js modules

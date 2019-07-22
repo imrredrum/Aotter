@@ -6,6 +6,7 @@
   </div>
   <div class="section">
     <sectionTitle2 content='最新影片' />
+    <plyr :src="src" />
   </div>
 </div>
 </template>
@@ -13,29 +14,30 @@
 <script>
 import Title from '~/components/title.vue'
 import List from '~/components/list.vue'
-import VuePlyr from 'vue-plyr'
-import 'vue-plyr/dist/vue-plyr.css'
-
-Vue.use(VuePlyr)
+import Plyr from '~/components/plyr.vue'
 
 export default {
   data() {
     return {
       listContent: {},
+      src: '',
     }
   },
   async asyncData({
     $axios
   }) {
-    let data = await $axios.$get('/api/post/list?show=7')
+    let listData = await $axios.$get('/api/post/list?show=7')
+    let videoData = await $axios.$get('/api/post/list?show=1&type=video')
     return {
-      listContent: data.success.list
+      listContent: listData.success.list,
+      src: videoData.success.list[0].videos[0].video.slice(4),
     }
   },
   components: {
     sectionTitle1: Title,
     List,
-    sectionTitle2: Title
+    sectionTitle2: Title,
+    Plyr,
   }
 }
 </script>
