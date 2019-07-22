@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import Title from '~/components/title.vue'
-import List from '~/components/list.vue'
-import Plyr from '~/components/plyr.vue'
+import Title from '~/components/Title.vue'
+import List from '~/components/List.vue'
+import Plyr from '~/components/Plyr.vue'
 
 export default {
   data() {
